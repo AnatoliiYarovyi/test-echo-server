@@ -5,6 +5,19 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      package-manager:
+        description: 'Package manager to use (npm, yarn, etc.)'
+        required: true
+        default: 'npm' # default value
+      command:
+        description: 'Build command'
+        required: true
+        default: 'npm run build' # default value
+      build-folder:
+        description: 'Build folder path'
+        required: true
+        default: './dist' # default value
 
 jobs:
   curl-request:
@@ -15,5 +28,9 @@ jobs:
         run: |
           curl -X POST \
             -H "Content-Type: application/json" \
-            -d '{"packageManager": "npm", "command": "npm start", "buildFolder": "./dist"}' \
+            -d '{
+              "packageManager": "${{ github.event.inputs.package-manager }}",
+              "command": "${{ github.event.inputs.command }}",
+              "buildFolder": "${{ github.event.inputs.build-folder }}"
+            }' \
             https://test-echo-server-production.up.railway.app/echo
