@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  curl-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send data using curl
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"packageManager": "npm", "command": "npm start", "buildFolder": "./dist"}' \
+            https://test-echo-server-production.up.railway.app/echo
