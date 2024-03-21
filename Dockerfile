@@ -3,7 +3,6 @@ FROM node:18 as build
 WORKDIR /app
 COPY . .
 
-ENV YARN_CACHE_FOLDER=/root/.yarn
 RUN npm ci
 RUN npm run build
 
