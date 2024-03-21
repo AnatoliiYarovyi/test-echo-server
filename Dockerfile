@@ -5,7 +5,7 @@ COPY . .
 
 ENV YARN_CACHE_FOLDER=/root/.yarn
 RUN npm ci
-RUN npm build
+RUN npm run build
 
 FROM --platform=linux/amd64 node:18-alpine
 COPY --from=build /app/dist dist
