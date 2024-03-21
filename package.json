@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build && node ./dist",
     "dev": "nodemon",
-    "build": "tsc --noEmit && esbuild src/index.ts --bundle --platform=node --external:bcrypt --outfile=dist/index.js"
+    "build": "esbuild src/index.ts --bundle --platform=node --external:bcrypt --outfile=dist/index.js"
   },
   "keywords": [],
   "author": "",
