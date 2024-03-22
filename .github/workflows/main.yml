@@ -1,9 +1,9 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
+  # push: # start when push in main branch
+  #   branches:
+  #     - main
   workflow_dispatch:
     inputs:
       package-manager:
