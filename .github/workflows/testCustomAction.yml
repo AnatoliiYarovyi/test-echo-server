@@ -9,8 +9,8 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Check test action 
-        uses: AnatoliiYarovyi/test-custom-action@v0.0.5
+        uses: AnatoliiYarovyi/test-custom-action@v0.0.4
         with:
           who-to-greet: "Mona the Octocat"
