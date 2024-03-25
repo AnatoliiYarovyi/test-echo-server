@@ -11,6 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Check test action 
-        uses: AnatoliiYarovyi/test-custom-action@v0.0.3
+        uses: AnatoliiYarovyi/test-custom-action@v0.0.4
         with:
           who-to-greet: "Mona the Octocat"
